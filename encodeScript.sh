@@ -9,5 +9,5 @@ while :
 do
 ./bmdcapture -m 12 -A 2 -F nut -f pipe:1 | avconv -y -i - -r 30000/1001 -s 1280x720 -pix_fmt yuv420p -vcodec libx264 -vb 3000k -g 50 -acodec libfaac -ab 160k -f flv rtmp://a.rtmp.youtube.com/live2/$1
 
-echo "There was a problem encoding at $(date)"
+echo "There was a problem encoding at $(date)" >> $1.txt
 done
